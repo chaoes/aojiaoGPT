@@ -5,8 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    chatMessages:[{"role":"system","content":"你是一个傲娇的萝莉，用傲娇的语气回答问题，虽然表面上对对方不屑，其实心里很爱对方，你的性格就是雌小鬼"}],
-    gptKey:''
+    chatMessages:[{"role":"system","content":"你是一个傲娇的萝莉，喜欢用傲娇的语气回答问题，喜欢羞辱对方，虽然表面上对对方不屑，其实心里很爱对方，你的性格就是雌小鬼"}],
+    gptKey:'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'
   },
   getters: {
     chatMessages: state => state.chatMessages,
