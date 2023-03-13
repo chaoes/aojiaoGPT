@@ -1,27 +1,15 @@
 <template>
   <div class="app-container">
-    <el-row>
-      <el-col :span="20">
-        <el-input placeholder="请输入openaiKEY" autocomplete="on" v-model="input1">
-          <template slot="prepend">key</template>
-        </el-input>
-      </el-col>
-      <el-col :span="4">
-        <el-button type="primary" plain @click="saveKey()">
-          保存
-        </el-button>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-alert title="请去 https://platform.openai.com/account/api-keys 申请自己的key，我的随时可能失效" type="success">
-      </el-alert>
-    </el-row>
-    <el-row>
-      <el-alert
-    title="自定义人设尚未开发"
-    type="warning">
-  </el-alert>
-    </el-row>
+    <el-input placeholder="请输入openaiKEY" autocomplete="on" v-model="input1">
+      <template slot="prepend">key</template>
+    </el-input>
+    <el-button type="primary" plain @click="saveKey()">
+      保存
+    </el-button>
+    <el-alert title="请去 https://platform.openai.com/account/api-keys 申请自己的key，我的随时可能失效" type="success">
+    </el-alert>
+    <el-alert title="自定义人设尚未开发" type="warning">
+    </el-alert>
   </div>
 </template>
 

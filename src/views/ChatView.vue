@@ -55,7 +55,7 @@ export default {
     ...mapGetters(['gptKey']),
     placeholder(){
       if(this.gptKey==''){
-        return '无key'
+        return '请先配置key'
       }
       return '请输入内容';
     }
@@ -76,6 +76,8 @@ export default {
       this.$store.dispatch("SET_MEGS",newMsgs)
       this.text=''
       this.canSend = false
+      //this.canSend = true //debug
+      this.toEnd()
       console.log(this.chatMessages[0].content)
       chat().then(res => {
         console.log(res.data)
@@ -91,9 +93,10 @@ export default {
       this.inputsHeight = this.$refs.inputs.clientHeight;
       console.log("h=" + this.inputsHeight)
     },
-    setWoedssHeight() {
-      this.$refs.wordslist.offfsetBottom = this.inputsHeight + 20
-      console.log("n=" + this.$refs.wordslist.offfsetBottom)
+    setWordsHeight() {
+      console.log("n1=" + this.$refs.wordslist.offsetHeight)
+      this.$refs.wordslist.style.height = document.documentElement.clientHeight-20-this.inputsHeight
+      console.log("n2=" + this.$refs.wordslist.offsetHeight)
     },
     toEnd(){
       this.$nextTick(()=>{
@@ -124,10 +127,10 @@ export default {
   */
   mounted() {
     this.getInputsHeight()
-    this.setWoedssHeight()
+    this.setWordsHeight()
     window.onresize = () => {
         this.getInputsHeight()
-        this.setWoedssHeight()
+        this.setWordsHeight()
     }
 
   },
@@ -185,7 +188,7 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 8px;
   right: 8px;
   bottom: 176px;

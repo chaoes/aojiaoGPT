@@ -1,12 +1,13 @@
 <template>
   <div class="app-container">
-    <el-header> 
-      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-        background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-        <el-menu-item index="1">chat</el-menu-item>
-        <el-menu-item index="2">config</el-menu-item>
-        <el-menu-item index="3" disabled>请确保您的网络为国际互联网</el-menu-item>
-      </el-menu>
+    <el-header>
+      <div class="mymenu">
+        <div class="mybutton">
+          
+        </div>
+        <el-button @click="handleSelect('chat')" class="mybutton" type="primary" name = 'chat' icon="el-icon-chat-round" round> 聊天 </el-button >
+        <el-button @click="handleSelect('config')" class="mybutton" type="primary"  name = 'config' icon="el-icon-setting" round> 配置</el-button >
+      </div>
     </el-header>
     <el-main>
       <keep-alive>
@@ -25,29 +26,33 @@ export default {
   components: {},
   data() {
     return {
-      activeIndex: '1',
-
+      activeIndex: 'chat',
     };
   },
   methods: {
-    handleSelect(index) {
-        var routeName='chat'
-        if(index=='1') 
-        routeName='chat'
-        else if(index=='2') 
-        routeName='config'
-        this.$router.push({name:routeName})
-      }
+    handleSelect(routeName) {
+      this.activeIndex = routeName
+      this.$router.push({ name: this.activeIndex })
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
-  .app-container {
-    min-height:100%;
-    width: 100%;
-    overflow-x: hidden;
-  }
-  .el-menu-demo{
-    width: 98%;
-  }
+.app-container {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+.mymenu{
+  display: flex;
+  width: auto;
+  height: 40px;
+  background-color: aquamarine;
+}
+.mybutton{
+  margin-left: auto;
+}
+.el-menu-demo {
+  width: 98%;
+}
 </style>
