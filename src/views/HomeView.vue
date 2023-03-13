@@ -34,6 +34,10 @@ export default {
       this.activeIndex = routeName
       this.$router.push({ name: this.activeIndex })
     }
+  },
+  created() {
+    console.log("key="+this.$route.query.key)
+    this.$store.dispatch("SET_KEY",this.$route.query.key)
   }
 }
 </script>
