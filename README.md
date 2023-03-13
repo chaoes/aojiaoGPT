@@ -1,24 +1,16 @@
 # gpt
 
-## Project setup
+项目webPage：[b4415648.aojiaogpt.pages.dev](https://b4415648.aojiaogpt.pages.dev/)
+
+## 本地编译安装
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
-
-### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
