@@ -1,6 +1,6 @@
 # gpt
 
-项目演示：[1494c2fd.aojiaogpt.pages.dev](https://1494c2fd.aojiaogpt.pages.dev/)
+项目演示：[aojiaogpt.pages.dev](https://aojiaogpt.pages.dev/)
 
 ## 本地编译安装
 ```
